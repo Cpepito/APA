@@ -14,17 +14,18 @@ public abstract class BoxOffice
 	{
 		try
 		{
+			this.listing = listing;
 			Scanner scanner=new Scanner(new File(listing));
 			// On boucle sur chaque ligne
 			while (scanner.hasNextLine()) 
 			{
-				String line = scanner.nextLine(); // va lire toute la ligne et place la tete de lecture a la ligne suivante
-				scanner.useDelimiter("(FILM|REALISATEUR|ANNEE|VILLE) : |ENTREES :"); 
-				do
-				{
-					System.out.println(scanner.next());
-				}while (line != "\n");
-					
+				String line = scanner.nextLine();
+				String[] donnees = line.split("\t");
+				String nomFilm = donnees[0].substring(7);
+				String nomRealisateur = donnees[1].substring(14);
+				int anneeFilm = Integer.parseInt(donnees[2].substring(8));
+				int nbEntrees = Integer.parseInt(donnees[4].substring(9));
+				addFilm(nomFilm, nomRealisateur, anneeFilm, nbEntrees);
 			}
 			scanner.close();
 		}

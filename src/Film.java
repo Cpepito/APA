@@ -2,10 +2,10 @@ package partie1;
 
 public class Film 
 {
-	private String titre;
-	private String realisateur;
-	private int annee;
-	private int nbEntrees;
+	protected String titre;
+	protected String realisateur;
+	protected int annee;
+	protected int nbEntrees;
 	
 	public Film(String titre, String real, int an, int nbE)
 	{
