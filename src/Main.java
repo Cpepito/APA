@@ -6,7 +6,7 @@ public class Main {
 			System.err.println("nom de fichier manquant");
 		else {
 			BoxOfficeTableau box = new BoxOfficeTableau(args[0]);
-			System.out.println(box);
+			System.out.println(box.toString());
 		}
 	}
 }

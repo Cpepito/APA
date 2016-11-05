@@ -14,6 +14,13 @@ public class Film
 		this.annee = an;
 		this.nbEntrees = nbE;
 	}
+	
+	public Film(Film f) {
+		titre = f.getTitre();
+		realisateur = f.getRealisateur();
+		annee = f.getAnnee();
+		nbEntrees = f.getNbEntrees();
+	}
 
 	public String getTitre() {
 		return titre;
@@ -33,6 +40,11 @@ public class Film
 
 	public void setNbEntrees(int nbEntrees) {
 		this.nbEntrees = nbEntrees;
+	}
+	
+	public String toString() {
+		return "("+annee +") "+titre+"	Real : " +realisateur+
+			"	Entrees: "+ nbEntrees + "\n";
 	}
 }
 

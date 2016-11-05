@@ -6,15 +6,20 @@ import java.util.Scanner;
 
 public abstract class BoxOffice 
 {
-	private String listing;
+	protected String listing;
 	
 	public abstract void addFilm (String titre, String realisateur, int annee, int nbEntrees);
+	
+	public abstract void createStock();
 	
 	public BoxOffice (String listing)
 	{
 		try
 		{
 			this.listing = listing;
+			
+			createStock();
+			
 			Scanner scanner=new Scanner(new File(listing));
 			// On boucle sur chaque ligne
 			while (scanner.hasNextLine()) 
@@ -34,3 +39,5 @@ public abstract class BoxOffice
 		}
 	}
 }
+
+
