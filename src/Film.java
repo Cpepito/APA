@@ -21,6 +21,13 @@ public class Film
 		annee = f.getAnnee();
 		nbEntrees = f.getNbEntrees();
 	}
+	
+	public Film() {
+		titre = "";
+		realisateur = "";
+		annee = 0;
+		nbEntrees = 0;
+	}
 
 	public String getTitre() {
 		return titre;

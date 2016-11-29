@@ -8,18 +8,16 @@ public abstract class BoxOffice
 {
 	protected String listing;
 	
-	public abstract void addFilm (String titre, String realisateur, int annee, int nbEntrees);
-	
+	public abstract void addFilm (Film f);
+		
 	public abstract void createStock();
-	
+		
 	public BoxOffice (String listing)
 	{
 		try
 		{
 			this.listing = listing;
-			
-			createStock();
-			
+			createStock();			
 			Scanner scanner=new Scanner(new File(listing));
 			// On boucle sur chaque ligne
 			while (scanner.hasNextLine()) 
@@ -30,7 +28,8 @@ public abstract class BoxOffice
 				String nomRealisateur = donnees[1].substring(14);
 				int anneeFilm = Integer.parseInt(donnees[2].substring(8));
 				int nbEntrees = Integer.parseInt(donnees[4].substring(9));
-				addFilm(nomFilm, nomRealisateur, anneeFilm, nbEntrees);
+				Film f = new Film(nomFilm, nomRealisateur, anneeFilm, nbEntrees);
+				addFilm(f);
 			}
 			scanner.close();
 		}

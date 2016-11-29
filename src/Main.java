@@ -5,8 +5,8 @@ public class Main {
 		if(args.length<1)
 			System.err.println("nom de fichier manquant");
 		else {
-			BoxOfficeTableau box = new BoxOfficeTableau(args[0]);
-			System.out.println(box.toString());
+			BoxOfficeChaine box = new BoxOfficeChaine(args[0]);
+			System.out.println(box);
 		}
 	}
 }

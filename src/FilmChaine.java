@@ -11,4 +11,15 @@ public class FilmChaine extends Film {
 	public FilmChaine(Film f) {
 		this(f,null);
 	}
+	
+	public FilmChaine getSuivant()
+    {
+        return next;
+    }
+	
+    public void setSuivant(FilmChaine f)
+    {
+        next = f;
+    }
+		
 }
